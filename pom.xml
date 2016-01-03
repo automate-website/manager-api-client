@@ -99,6 +99,10 @@
             <name>repository.automate.website-releases</name>
             <url>http://repository.automate.website/artifactory/automate.website-release</url>
         </repository>
+        <snapshotRepository>
+            <id>repository.automate.website-snapshots</id>
+            <url>http://repository.automate.website/artifactory/automate.website-snapshot</url>
+        </snapshotRepository>
     </distributionManagement>
     <repositories>
         <repository>

@@ -100,4 +100,11 @@
             <url>http://repository.automate.website/artifactory/automate.website-release</url>
         </repository>
     </distributionManagement>
+    <repositories>
+        <repository>
+            <id>repository.automate.website</id>
+            <name>repository.automate.website</name>
+            <url>http://repository.automate.website/artifactory/automate.website</url>
+        </repository>
+    </repositories>
 </project>

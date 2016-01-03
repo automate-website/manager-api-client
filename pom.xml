@@ -12,6 +12,11 @@
         </license>
     </licenses>
     
+    <organization>
+        <name>Automate Website</name>
+        <url>http://automate.website</url>
+    </organization>
+    
     <dependencies>
         <dependency>
             <groupId>com.mashape.unirest</groupId>
@@ -80,4 +85,19 @@
             </plugin>
         </plugins>
     </build>
+    
+    <scm>
+        <url>https://github.com/automate-website/manager-public-api-client</url>
+        <connection>scm:git:ssh://git@github.com:automate-website/manager-public-api-client.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:automate-website/manager-public-api-client.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+    
+    <distributionManagement>
+        <repository>
+            <id>repository.automate.website-releases</id>
+            <name>repository.automate.website-releases</name>
+            <url>http://repository.automate.website/artifactory/automate.website-release</url>
+        </repository>
+    </distributionManagement>
 </project>

@@ -88,8 +88,8 @@
     
     <scm>
         <url>https://github.com/automate-website/manager-public-api-client</url>
-        <connection>scm:git:ssh://git@github.com:automate-website/manager-public-api-client.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:automate-website/manager-public-api-client.git</developerConnection>
+        <connection>scm:git:git@github.com:automate-website/manager-public-api-client.git</connection>
+        <developerConnection>scm:git:git@github.com:automate-website/manager-public-api-client.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
     

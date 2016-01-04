@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>website.automate</groupId>
     <artifactId>manager-public-api-client</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     
     <licenses>
         <license>
@@ -95,7 +95,7 @@
         <url>https://github.com/automate-website/manager-public-api-client</url>
         <connection>scm:git:git@github.com:automate-website/manager-public-api-client.git</connection>
         <developerConnection>scm:git:git@github.com:automate-website/manager-public-api-client.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>0.0.2</tag>
     </scm>
     
     <distributionManagement>

@@ -4,9 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [0.0.1]
+## [0.0.2]
 ### Added
 - created initial implementation of the API
 
-[Unreleased]: https://github.com/automate-website/manager-public-api-client/compare/0.0.1...HEAD
-[0.0.1]: https://github.com/automate-website/manager-public-api-client/compare/0.0.0...0.0.1
+[Unreleased]: https://github.com/automate-website/manager-public-api-client/compare/0.0.2...HEAD
+[0.0.2]: https://github.com/automate-website/manager-public-api-client/compare/0.0.0...0.0.2

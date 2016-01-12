@@ -1,4 +1,4 @@
-package website.automate.manager.pub.api.client;
+package website.automate.manager.api.client;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 
@@ -6,13 +6,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 
-import website.automate.manager.pub.api.client.model.Job;
-import website.automate.manager.pub.api.client.model.Job.JobStatus;
-import website.automate.manager.pub.api.client.model.Job.TakeScreenshots;
-import website.automate.manager.pub.api.client.model.Project;
-import website.automate.manager.pub.api.client.model.Scenario;
-import website.automate.manager.pub.api.client.model.TestResults;
-import website.automate.manager.pub.api.client.support.Constants;
+import website.automate.manager.api.client.model.Job;
+import website.automate.manager.api.client.model.Project;
+import website.automate.manager.api.client.model.Scenario;
+import website.automate.manager.api.client.model.TestResults;
+import website.automate.manager.api.client.model.Job.JobStatus;
+import website.automate.manager.api.client.model.Job.TakeScreenshots;
+import website.automate.manager.api.client.support.Constants;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

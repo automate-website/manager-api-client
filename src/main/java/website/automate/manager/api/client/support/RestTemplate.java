@@ -1,10 +1,10 @@
-package website.automate.manager.pub.api.client.support;
+package website.automate.manager.api.client.support;
 
 import static java.text.MessageFormat.format;
 
 import java.io.IOException;
 
-import website.automate.manager.pub.api.client.model.Authentication;
+import website.automate.manager.api.client.model.Authentication;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;

@@ -1,4 +1,4 @@
-package website.automate.manager.pub.api.client.support;
+package website.automate.manager.api.client.support;
 
 public class Constants {
 

@@ -1,6 +1,6 @@
-package website.automate.manager.pub.api.client.support;
+package website.automate.manager.api.client.support;
 
-import website.automate.manager.pub.api.client.model.Authentication;
+import website.automate.manager.api.client.model.Authentication;
 
 public final class AuthenticationUtils {
 

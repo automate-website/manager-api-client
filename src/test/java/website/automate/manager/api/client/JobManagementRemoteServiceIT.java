@@ -1,4 +1,4 @@
-package website.automate.manager.pub.api.client;
+package website.automate.manager.api.client;
 
 import static java.util.Arrays.asList;
 
@@ -8,10 +8,11 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import website.automate.manager.pub.api.client.model.Authentication;
-import website.automate.manager.pub.api.client.model.Job;
-import website.automate.manager.pub.api.client.model.Job.JobProfile;
-import website.automate.manager.pub.api.client.support.AuthenticationUtils;
+import website.automate.manager.api.client.JobManagementRemoteService;
+import website.automate.manager.api.client.model.Authentication;
+import website.automate.manager.api.client.model.Job;
+import website.automate.manager.api.client.model.Job.JobProfile;
+import website.automate.manager.api.client.support.AuthenticationUtils;
 
 public class JobManagementRemoteServiceIT extends MockServerIT {
 

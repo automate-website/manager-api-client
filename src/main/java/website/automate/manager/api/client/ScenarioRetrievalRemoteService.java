@@ -1,12 +1,12 @@
-package website.automate.manager.pub.api.client;
+package website.automate.manager.api.client;
 
 import static java.util.Arrays.asList;
 
 import java.util.List;
 
-import website.automate.manager.pub.api.client.model.Authentication;
-import website.automate.manager.pub.api.client.model.Scenario;
-import website.automate.manager.pub.api.client.support.RestTemplate;
+import website.automate.manager.api.client.model.Authentication;
+import website.automate.manager.api.client.model.Scenario;
+import website.automate.manager.api.client.support.RestTemplate;
 
 public class ScenarioRetrievalRemoteService {
 

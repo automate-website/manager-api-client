@@ -1,4 +1,4 @@
-package website.automate.manager.pub.api.client.model;
+package website.automate.manager.api.client.model;
 
 import java.util.Objects;
 

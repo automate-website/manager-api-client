@@ -1,4 +1,4 @@
-package website.automate.manager.pub.api.client;
+package website.automate.manager.api.client;
 
 import static org.junit.Assert.*;
 
@@ -6,8 +6,9 @@ import java.util.List;
 
 import org.junit.Test;
 
-import website.automate.manager.pub.api.client.model.Project;
-import website.automate.manager.pub.api.client.support.AuthenticationUtils;
+import website.automate.manager.api.client.ProjectRetrievalRemoteService;
+import website.automate.manager.api.client.model.Project;
+import website.automate.manager.api.client.support.AuthenticationUtils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 

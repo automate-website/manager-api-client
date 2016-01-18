@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>website.automate</groupId>
     <artifactId>manager-api-client</artifactId>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.1.0</version>
     
     <licenses>
         <license>
@@ -108,7 +108,7 @@
         <url>https://github.com/automate-website/manager-api-client</url>
         <connection>scm:git:git@github.com:automate-website/manager-api-client.git</connection>
         <developerConnection>scm:git:git@github.com:automate-website/manager-api-client.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>0.1.0</tag>
     </scm>
     
     <distributionManagement>

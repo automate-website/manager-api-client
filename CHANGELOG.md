@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.2.0]
 ### Changed
 - switched to oss.sonatype.org distribution management
+
 ### Added
 - integrated travis-ci
 

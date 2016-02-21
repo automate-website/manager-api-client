@@ -4,6 +4,7 @@
     <groupId>website.automate</groupId>
     <artifactId>manager-api-client</artifactId>
     <version>0.1.2-SNAPSHOT</version>
+    <packaging>jar</packaging>
     
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Implementation of the automate.website public API.</description>
@@ -85,11 +86,6 @@
                   </goals>
                 </execution>
               </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.3</version>
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>

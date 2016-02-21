@@ -5,17 +5,35 @@
     <artifactId>manager-api-client</artifactId>
     <version>0.1.2-SNAPSHOT</version>
     
-    <licenses>
-        <license>
-            <name>MIT License</name>
-            <url>http://opensource.org/licenses/MIT</url>
-        </license>
-    </licenses>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Implementation of the automate.website public API.</description>
+    <url>https://github.com/automate-website/manager-api-client</url>
+
+    <developers>
+       <developer>
+        <name>Dmitri Wolowelsky</name>
+        <email>dmitri.wolowelsky@automate.website</email>
+        <organization>Automate Website</organization>
+        <organizationUrl>https://automate.website</organizationUrl>
+       </developer>
+       <developer>
+        <name>Michael Lewkowski</name>
+        <email>michael.lewkowski@automate.website</email>
+        <organization>Automate Website</organization>
+        <organizationUrl>https://automate.website</organizationUrl>
+       </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
     
-    <organization>
-        <name>Automate Website</name>
-        <url>https://github.com/automate-website</url>
-    </organization>
+    <licenses>
+      <license>
+        <name>MIT License</name>
+        <url>http://www.opensource.org/licenses/mit-license.php</url>
+      </license>
+    </licenses>
     
     <dependencies>
         <dependency>
@@ -122,33 +140,62 @@
                     </goals>
                   </execution>
                 </executions>
-          </plugin>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.3</version>
+                <executions>
+                <execution>
+                  <id>attach-javadocs</id>
+                  <goals>
+                    <goal>jar</goal>
+                  </goals>
+                </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     
+    <profiles>
+        <profile>
+            <id>sign-artifacts</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    
+    <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+  
     <scm>
         <url>https://github.com/automate-website/manager-api-client</url>
         <connection>scm:git:git@github.com:automate-website/manager-api-client.git</connection>
         <developerConnection>scm:git:git@github.com:automate-website/manager-api-client.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
-    
-    <distributionManagement>
-        <repository>
-            <id>repository.automate.website-releases</id>
-            <name>repository.automate.website-releases</name>
-            <url>http://repository.automate.website/artifactory/automate.website-release</url>
-        </repository>
-        <snapshotRepository>
-            <id>repository.automate.website-snapshots</id>
-            <url>http://repository.automate.website/artifactory/automate.website-snapshot</url>
-        </snapshotRepository>
-    </distributionManagement>
-    <repositories>
-        <repository>
-            <id>repository.automate.website</id>
-            <name>repository.automate.website</name>
-            <url>http://repository.automate.website/artifactory/automate.website</url>
-        </repository>
-    </repositories>
 </project>

@@ -1,6 +1,7 @@
 package website.automate.manager.api.client;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
+import static java.util.Collections.singleton;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -9,7 +10,6 @@ import org.junit.Rule;
 import website.automate.manager.api.client.model.Job;
 import website.automate.manager.api.client.model.Project;
 import website.automate.manager.api.client.model.Scenario;
-import website.automate.manager.api.client.model.TestResults;
 import website.automate.manager.api.client.model.Job.JobStatus;
 import website.automate.manager.api.client.model.Job.TakeScreenshots;
 import website.automate.manager.api.client.support.Constants;
@@ -23,7 +23,9 @@ public abstract class MockServerIT {
     private static final String 
         PROJECT_ID = "1654de39e7405a41c0920d52",
         SCENARIO_ID = "2654de39e7405a41c0920d52",
-        JOB_ID = "3654de39e7405a41c0920d52";
+        JOB_ID = "3654de39e7405a41c0920d52",
+        CONTEXT_KEY = "key",
+        CONTEXT_VALUE = "value";
     
     private static final Integer TEST_PORT = 9999;
 	
@@ -76,7 +78,7 @@ public abstract class MockServerIT {
 	
 	private void mapJobsBatchEndpoint() throws JsonProcessingException {
 	    requestJob = createTestJob();
-	    job = createTestJob(JOB_ID, JobStatus.SCHEDULED, false);
+	    job = createTestJob(JOB_ID, JobStatus.SCHEDULED);
         
         stubFor(post(urlPathEqualTo("/api/public/job/batch"))
                 .withRequestBody(equalToJson(objectMapper.writeValueAsString(new Job [] { requestJob })))
@@ -87,7 +89,7 @@ public abstract class MockServerIT {
     }
 	
 	private void mapJobsSubsetEndpoint() throws JsonProcessingException {
-	    successfulJob = createTestJob(JOB_ID, JobStatus.SUCCESS, false);
+	    successfulJob = createTestJob(JOB_ID, JobStatus.SUCCESS);
 	    
         stubFor(post(urlPathEqualTo("/api/public/job/subset"))
                 .withRequestBody(equalToJson(objectMapper.writeValueAsString(new String [] { job.getId() })))
@@ -98,29 +100,21 @@ public abstract class MockServerIT {
     }
 	
 	private Job createTestJob(){
-	    return createTestJob(null, null, null);
+	    return createTestJob(null, null);
 	}
 	
-	private Job createTestJob(String id, JobStatus status, Boolean failed){
+	private Job createTestJob(String id, JobStatus status){
 	    Job job = new Job();
 	    job.setTakeScreenshots(TakeScreenshots.ON_FAILURE);
-	    job.setScenarioId(SCENARIO_ID);
+	    job.setScenarioIds(singleton(SCENARIO_ID));
+	    job.getContext().put(CONTEXT_KEY, CONTEXT_VALUE);
 	    if(status != null){
 	        job.setStatus(status);
 	    }
 	    if(id != null){
 	        job.setId(id);
 	    }
-	    if(failed != null){
-	        job.setTestResults(createSuccessfulTestResults());
-	    }
 	    return job;
-	}
-	
-	private TestResults createSuccessfulTestResults(){
-	    TestResults results = new TestResults();
-	    results.setFailed(false);
-	    return results;
 	}
 	
 	private Scenario createTestScenario(){

@@ -1,34 +1,40 @@
 package website.automate.manager.api.client.model;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
 public class Job extends AbstractEntity {
 
-    public enum JobProfile {
-        BRIEF,
+	public enum JobProfile {
+		MINIMAL,
+		BRIEF,
         COMPLETE;
     }
-    
+
     public enum JobStatus {
-        RUNNING,
         SCHEDULED,
-        FAILED,
-        SUCCESS;
+        RUNNING,
+        SUCCESS,
+        FAILURE,
+        ERROR
     }
-    
+
     public enum TakeScreenshots {
-        ON_EVERY_STEP,
-        ON_FAILURE,
-        NEVER;
+    	NEVER,
+    	ON_FAILURE,
+    	ON_EVERY_STEP;
     }
 
     private String title;
     
     private JobStatus status;
     
-    private String scenarioId;
+    private Set<String> scenarioIds;
     
     private TakeScreenshots takeScreenshots;
     
-    private TestResults testResults;
+	private Map<String, String> context = new HashMap<String, String>();
     
     public String getTitle() {
         return title;
@@ -46,12 +52,12 @@ public class Job extends AbstractEntity {
         this.takeScreenshots = takeScreenshots;
     }
     
-    public String getScenarioId() {
-        return scenarioId;
+    public Set<String> getScenarioIds() {
+        return scenarioIds;
     }
 
-    public void setScenarioId(String scenarioId) {
-        this.scenarioId = scenarioId;
+    public void setScenarioIds(Set<String> scenarioIds) {
+        this.scenarioIds = scenarioIds;
     }
     
     public JobStatus getStatus() {
@@ -62,11 +68,11 @@ public class Job extends AbstractEntity {
         this.status = status;
     }
     
-    public TestResults getTestResults() {
-        return testResults;
-    }
+    public Map<String, String> getContext() {
+		return context;
+	}
 
-    public void setTestResults(TestResults testResults) {
-        this.testResults = testResults;
-    }
+	public void setContext(Map<String, String> context) {
+		this.context = context;
+	}
 }

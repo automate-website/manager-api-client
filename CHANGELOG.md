@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- enabled multilpe scenario execution per job
+- added context parameter delegation option
+
 ## [0.2.0]
 ### Changed
 - switched to oss.sonatype.org distribution management

@@ -4,6 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.1]
 ### Fixed
 - fixed scenario name parameter deserialization
 
@@ -36,7 +37,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - created initial implementation of the API
 
-[Unreleased]: https://github.com/automate-website/manager-api-client/compare/0.3.0...HEAD
+[Unreleased]: https://github.com/automate-website/manager-api-client/compare/0.3.1...HEAD
+[0.3.1]: https://github.com/automate-website/manager-api-client/compare/0.3.0...0.3.1
 [0.3.0]: https://github.com/automate-website/manager-api-client/compare/0.2.0...0.3.0
 [0.2.0]: https://github.com/automate-website/manager-api-client/compare/0.1.1...0.2.0
 [0.1.1]: https://github.com/automate-website/manager-api-client/compare/0.1.0...0.1.1

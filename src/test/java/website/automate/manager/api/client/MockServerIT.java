@@ -119,7 +119,7 @@ public abstract class MockServerIT {
 	
 	private Scenario createTestScenario(){
 	    Scenario scenario = new Scenario();
-	    scenario.setTitle("My awesome scenario");
+	    scenario.setName("My awesome scenario");
 	    scenario.setId(SCENARIO_ID);
 	    return scenario;
 	}

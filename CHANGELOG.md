@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+- fixed scenario name parameter deserialization
+
 ## [0.3.0]
 ### Changed
 - enabled multilpe scenario execution per job

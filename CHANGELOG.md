@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- extended scenario model with fragment flag
+
 ## [0.3.1]
 ### Fixed
 - fixed scenario name parameter deserialization

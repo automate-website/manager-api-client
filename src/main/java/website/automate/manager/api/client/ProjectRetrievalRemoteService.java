@@ -11,31 +11,43 @@ import website.automate.manager.api.client.support.RestTemplate;
 
 public class ProjectRetrievalRemoteService {
 
-	private static final ProjectRetrievalRemoteService INSTANCE = new ProjectRetrievalRemoteService();
-	
-	public static ProjectRetrievalRemoteService getInstance(){
-		return INSTANCE;
-	}
+    private static final ProjectRetrievalRemoteService INSTANCE = new ProjectRetrievalRemoteService();
 
-	private ScenarioRetrievalRemoteService scenarioRetrievalRemoteService = ScenarioRetrievalRemoteService.getInstance();
-	
-	private RestTemplate restTemplate = RestTemplate.getInstance();
-	
-	public List<Project> getProjectsByPrincipal(Authentication principal) {
-		return asList(restTemplate.performGet(Project [].class, 
-				"/public/project/my?profile=BRIEF",
-				principal));
-	}
-	
-	public List<Project> getProjectsWithScenariosByPrincipal(Authentication principal){
-		List<Project> projects = getProjectsByPrincipal(principal);
-		
-		for(Project project : projects){
-			List<Scenario> scenarios = scenarioRetrievalRemoteService.getScenariosByProjectIdAndPrincipal(project.getId(), principal);
-			project.setScenarios(scenarios);
-		}
-		
-		return projects;
-	}
-	
+    public static ProjectRetrievalRemoteService getInstance() {
+        return INSTANCE;
+    }
+
+    private ScenarioRetrievalRemoteService scenarioRetrievalRemoteService = ScenarioRetrievalRemoteService
+            .getInstance();
+
+    private RestTemplate restTemplate = RestTemplate.getInstance();
+
+    public List<Project> getProjectsByPrincipal(Authentication principal) {
+        return asList(restTemplate.performGet(Project[].class, "/public/project/my?profile=BRIEF", principal));
+    }
+
+    public List<Project> getProjectsWithScenariosByPrincipal(Authentication principal) {
+        List<Project> projects = getProjectsByPrincipal(principal);
+
+        for (Project project : projects) {
+            List<Scenario> scenarios = scenarioRetrievalRemoteService
+                    .getScenariosByProjectIdAndPrincipal(project.getId(), principal);
+            project.setScenarios(scenarios);
+        }
+
+        return projects;
+    }
+
+    public List<Project> getProjectsWithExecutableScenariosByPrincipal(Authentication principal) {
+        List<Project> projects = getProjectsByPrincipal(principal);
+
+        for (Project project : projects) {
+            List<Scenario> scenarios = scenarioRetrievalRemoteService
+                    .getExecutableScenariosByProjectIdAndPrincipal(project.getId(), principal);
+            project.setScenarios(scenarios);
+        }
+
+        return projects;
+    }
+
 }

@@ -54,6 +54,7 @@ public abstract class MockServerIT {
 	    mapScenariosEndpoint();
 	    mapJobsBatchEndpoint();
 	    mapJobsSubsetEndpoint();
+	    mapExecutableScenariosEndpoint();
 	}
 	
 	private void mapProjectsEndpoint() throws JsonProcessingException{
@@ -70,6 +71,16 @@ public abstract class MockServerIT {
         scenario = createTestScenario();
         
         stubFor(get(urlPathEqualTo("/api/public/project/" + project.getId() + "/scenario?profile=BRIEF"))
+                .willReturn(aResponse()
+                    .withStatus(200)
+                    .withHeader("Content-Type", "application/json")
+                    .withBody(objectMapper.writeValueAsString(new Scenario [] { scenario }))));
+    }
+	
+	private void mapExecutableScenariosEndpoint() throws JsonProcessingException {
+        scenario = createTestScenario();
+        
+        stubFor(get(urlPathEqualTo("/api/public/project/" + project.getId() + "/scenario?profile=BRIEF&fragment=false"))
                 .willReturn(aResponse()
                     .withStatus(200)
                     .withHeader("Content-Type", "application/json")

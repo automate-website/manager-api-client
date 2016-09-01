@@ -25,4 +25,14 @@ public class ScenarioRetrievalRemoteServiceIT extends MockServerIT {
 		Scenario actualScenario = acutalScenarios.get(0);
 		assertEquals(getScenario(), actualScenario);
 	}
+	
+    @Test
+    public void executableScenariosShouldBeRetrievedByPrincipal(){
+        List<Scenario> acutalScenarios = retrievalRemoteService.getExecutableScenariosByProjectIdAndPrincipal(getProject().getId(), principal);
+        
+        assertNotNull(acutalScenarios);
+        assertFalse(acutalScenarios.isEmpty());
+        Scenario actualScenario = acutalScenarios.get(0);
+        assertEquals(getScenario(), actualScenario);
+    }
 }

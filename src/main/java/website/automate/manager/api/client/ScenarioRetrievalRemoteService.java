@@ -18,6 +18,12 @@ public class ScenarioRetrievalRemoteService {
 	
 	private RestTemplate restTemplate = RestTemplate.getInstance();
 	
+	public List<Scenario> getExecutableScenariosByProjectIdAndPrincipal(String projectId, Authentication principal){
+	    return asList(restTemplate.performGet(Scenario [].class, 
+                "/public/project/" + projectId + "/scenario?profile=BRIEF&fragment=false", 
+                principal));
+	}
+	
 	public List<Scenario> getScenariosByProjectIdAndPrincipal(String projectId, Authentication principal) {
 		return asList(restTemplate.performGet(Scenario [].class, 
 				"/public/project/" + projectId + "/scenario?profile=BRIEF", 

@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- temporary bypassed ssl validation since the required certificates are included first since java 8u101.
+
 ## [0.5.0]
 ### Added
 - added convenience method to retrieve all projects with executable scenarios

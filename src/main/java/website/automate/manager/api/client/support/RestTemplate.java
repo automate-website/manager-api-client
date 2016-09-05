@@ -3,6 +3,16 @@ package website.automate.manager.api.client.support;
 import static java.text.MessageFormat.format;
 
 import java.io.IOException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+
+import javax.net.ssl.SSLContext;
+
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.conn.ssl.SSLContexts;
+import org.apache.http.conn.ssl.TrustStrategy;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 
 import website.automate.manager.api.client.model.Authentication;
 
@@ -51,6 +61,32 @@ public class RestTemplate {
 		        }
 		    }
 		});
+		
+		// SSL bypass hack
+		Unirest.setHttpClient(createHttpClientWithDisabledSSLCheck());
+	}
+	
+	private CloseableHttpClient createHttpClientWithDisabledSSLCheck(){
+	    SSLContext sslcontext = null;
+        try {
+            sslcontext = SSLContexts.custom()
+                    .loadTrustMaterial(null, new TrustStrategy(){
+
+                        @Override
+                        public boolean isTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+                            return true;
+                        }
+                        
+                    })
+                    .build();
+        } catch (Exception e) {
+            throw new RuntimeException("SSL Context can not be created.", e);
+        }
+
+        SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslcontext);
+        return HttpClients.custom()
+                         .setSSLSocketFactory(sslsf)
+                         .build();
 	}
 	
 	public <T> T performGet(Class<T> clazz, String url, Authentication principal){

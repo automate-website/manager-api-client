@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class Job extends AbstractEntity {
 
-	public enum JobProfile {
+  public enum JobProfile {
 		MINIMAL,
 		BRIEF,
         COMPLETE;
@@ -35,6 +35,8 @@ public class Job extends AbstractEntity {
     private TakeScreenshots takeScreenshots;
     
 	private Map<String, String> context = new HashMap<String, String>();
+	
+	private Double timeout;
     
     public String getTitle() {
         return title;
@@ -67,7 +69,15 @@ public class Job extends AbstractEntity {
     public void setStatus(JobStatus status) {
         this.status = status;
     }
-    
+
+    public Double getTimeout() {
+      return timeout;
+    }
+
+    public void setTimeout(Double timeout) {
+      this.timeout = timeout;
+    }
+
     public Map<String, String> getContext() {
 		return context;
 	}

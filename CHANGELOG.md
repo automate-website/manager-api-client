@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- introduced job timeout
+
 ## [0.6.0]
 ### Changed
 - temporary bypassed ssl validation since the required certificates are included first since java 8u101.

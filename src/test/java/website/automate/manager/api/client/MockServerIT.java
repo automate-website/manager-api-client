@@ -119,6 +119,7 @@ public abstract class MockServerIT {
 	    job.setTakeScreenshots(TakeScreenshots.ON_FAILURE);
 	    job.setScenarioIds(singleton(SCENARIO_ID));
 	    job.getContext().put(CONTEXT_KEY, CONTEXT_VALUE);
+	    job.setTimeout(1.0);
 	    if(status != null){
 	        job.setStatus(status);
 	    }

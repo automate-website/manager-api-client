@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 
+import website.automate.manager.api.client.model.Box;
 import website.automate.manager.api.client.model.Job;
 import website.automate.manager.api.client.model.Project;
 import website.automate.manager.api.client.model.Scenario;
@@ -25,7 +26,11 @@ public abstract class MockServerIT {
         SCENARIO_ID = "2654de39e7405a41c0920d52",
         JOB_ID = "3654de39e7405a41c0920d52",
         CONTEXT_KEY = "key",
-        CONTEXT_VALUE = "value";
+        CONTEXT_VALUE = "value",
+        RESOLUTION = "1280x768x24",
+        BOX_ID = "3654de39e7405a41c0920d52",
+        BROWSER = "Firefox 50.0",
+        OS = "Windows 10";
     
     private static final Integer TEST_PORT = 9999;
 	
@@ -37,6 +42,8 @@ public abstract class MockServerIT {
 	private Project project;
 	
 	private Scenario scenario;
+	
+	private Box box;
 	
 	private Job
 	    requestJob,
@@ -50,11 +57,22 @@ public abstract class MockServerIT {
 	
 	@Before
 	public void before() throws JsonProcessingException{
+	    mapBoxEndpoint();  
 	    mapProjectsEndpoint();
 	    mapScenariosEndpoint();
 	    mapJobsBatchEndpoint();
 	    mapJobsSubsetEndpoint();
 	    mapExecutableScenariosEndpoint();
+	}
+	
+	private void mapBoxEndpoint() throws JsonProcessingException{
+	  box = createTestBox();
+	  
+	  stubFor(get(urlPathEqualTo("/api/public/box"))
+	      .willReturn(aResponse()
+              .withStatus(200)
+              .withHeader("Content-Type", "application/json")
+              .withBody(objectMapper.writeValueAsString(new Box [] { box }))));
 	}
 	
 	private void mapProjectsEndpoint() throws JsonProcessingException{
@@ -120,6 +138,8 @@ public abstract class MockServerIT {
 	    job.setScenarioIds(singleton(SCENARIO_ID));
 	    job.getContext().put(CONTEXT_KEY, CONTEXT_VALUE);
 	    job.setTimeout(1.0);
+	    job.setResolution(RESOLUTION);
+	    job.setBoxId(BOX_ID);
 	    if(status != null){
 	        job.setStatus(status);
 	    }
@@ -143,6 +163,13 @@ public abstract class MockServerIT {
 	    return project;
 	}
 	
+	private Box createTestBox(){
+	  Box box = new Box();
+	  box.setBrowser(BROWSER);
+	  box.setOs(OS);
+	  return box;
+	}
+	
 	protected Job getRequestJob(){
 	    return requestJob;
 	}
@@ -161,5 +188,9 @@ public abstract class MockServerIT {
     
     protected Scenario getScenario(){
         return scenario;
+    }
+    
+    protected Box getBox(){
+      return box;
     }
 }

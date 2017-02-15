@@ -27,6 +27,10 @@ public class Job extends AbstractEntity {
     }
 
     private String title;
+
+    private String resolution;
+
+    private String boxId;
     
     private JobStatus status;
     
@@ -85,4 +89,20 @@ public class Job extends AbstractEntity {
 	public void setContext(Map<String, String> context) {
 		this.context = context;
 	}
+
+    public String getResolution() {
+      return resolution;
+    }
+
+    public void setResolution(String resolution) {
+      this.resolution = resolution;
+    }
+
+    public String getBoxId() {
+      return boxId;
+    }
+
+    public void setBoxId(String boxId) {
+      this.boxId = boxId;
+    }
 }

@@ -6,6 +6,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - introduced job timeout
+- added job resolution parameter
+- added job box id parameter
+- added boxes api
 
 ## [0.6.0]
 ### Changed

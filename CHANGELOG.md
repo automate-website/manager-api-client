@@ -5,10 +5,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-- introduced job timeout
 - added job resolution parameter
 - added job box id parameter
 - added boxes api
+
+## [0.7.0]
+
+### Added
+- introduced job timeout
 
 ## [0.6.0]
 ### Changed
@@ -57,6 +61,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - created initial implementation of the API
 
 [Unreleased]: https://github.com/automate-website/manager-api-client/compare/0.5.0...HEAD
+[0.7.0]: https://github.com/automate-website/manager-api-client/compare/0.6.0...0.7.0
+[0.6.0]: https://github.com/automate-website/manager-api-client/compare/0.5.0...0.6.0
 [0.5.0]: https://github.com/automate-website/manager-api-client/compare/0.4.0...0.5.0
 [0.4.0]: https://github.com/automate-website/manager-api-client/compare/0.3.1...0.4.0
 [0.3.1]: https://github.com/automate-website/manager-api-client/compare/0.3.0...0.3.1

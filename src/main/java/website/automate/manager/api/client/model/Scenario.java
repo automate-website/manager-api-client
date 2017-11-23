@@ -1,6 +1,6 @@
 package website.automate.manager.api.client.model;
 
-import java.util.Set;
+import java.util.ArrayList;
 
 public class Scenario extends AbstractEntity {
 
@@ -19,14 +19,14 @@ public class Scenario extends AbstractEntity {
     
     private STATUS status;
     
-    Set<Step> steps;
+    ArrayList<Step> steps;
         
     
-    public Set<Step> getSteps() {
+    public ArrayList<Step> getSteps() {
 		return steps;
 	}
 
-	public void setSteps(Set<Step> steps) {
+	public void setSteps(ArrayList<Step> steps) {
 		this.steps = steps;
 	}
 

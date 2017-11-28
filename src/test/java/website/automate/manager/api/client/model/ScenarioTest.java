@@ -71,9 +71,9 @@ public class ScenarioTest {
   @Test(timeout = 4000)
   public void test06()  throws Throwable  {
       Scenario scenario0 = new Scenario();
-      Scenario.STATUS scenario_STATUS0 = Scenario.STATUS.SUCCESS;
+      Scenario.Status scenario_STATUS0 = Scenario.Status.SUCCESS;
       scenario0.setStatus(scenario_STATUS0);
-      Scenario.STATUS scenario_STATUS1 = scenario0.getStatus();
+      Scenario.Status scenario_STATUS1 = scenario0.getStatus();
       assertSame(scenario_STATUS1, scenario_STATUS0);
   }
 

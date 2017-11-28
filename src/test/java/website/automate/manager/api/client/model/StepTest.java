@@ -17,18 +17,18 @@ public class StepTest{
   @Test(timeout = 4000)
   public void test0()  throws Throwable  {
       Step step0 = new Step();
-      Step.STATUS step_STATUS0 = Step.STATUS.ERROR;
+      Step.Status step_STATUS0 = Step.Status.ERROR;
       step0.setStatus(step_STATUS0);
-      assertEquals(Step.STATUS.ERROR, step0.getStatus());
+      assertEquals(Step.Status.ERROR, step0.getStatus());
   }
 
   @Test(timeout = 4000)
   public void test1()  throws Throwable  {
       Step step0 = new Step();
-      Step.STATUS step_STATUS0 = Step.STATUS.SUCCESS;
+      Step.Status step_STATUS0 = Step.Status.SUCCESS;
       step0.status = step_STATUS0;
-      Step.STATUS step_STATUS1 = step0.getStatus();
-      assertEquals(Step.STATUS.SUCCESS, step_STATUS1);
+      Step.Status step_STATUS1 = step0.getStatus();
+      assertEquals(Step.Status.SUCCESS, step_STATUS1);
   }
 
   @Test(timeout = 4000)

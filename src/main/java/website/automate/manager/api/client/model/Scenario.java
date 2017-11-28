@@ -12,12 +12,13 @@ public class Scenario extends AbstractEntity {
     
     int numStepPasses;
     
-    enum STATUS {
+    enum Status {
     	SUCCESS,
-    	ERROR
+    	ERROR,
+    	FAILURE
     }
     
-    private STATUS status;
+    private Status status;
     
     ArrayList<Step> steps;
         
@@ -46,11 +47,11 @@ public class Scenario extends AbstractEntity {
 		this.numStepPasses = numStepPasses;
 	}
 
-	public STATUS getStatus() {
+	public Status getStatus() {
 		return status;
 	}
 
-	public void setStatus(STATUS status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 

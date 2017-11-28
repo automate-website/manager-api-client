@@ -1,12 +1,13 @@
 package website.automate.manager.api.client.model;
 
 public class Step {
-	public enum STATUS {
+	public enum Status {
 		SUCCESS,
-		ERROR
+		ERROR,
+		FAILURE
 	}
 		
-	public STATUS status;
+	public Status status;
 
 	private int index;
 		
@@ -20,11 +21,11 @@ public class Step {
 		this.index = index;
 	}
 
-	public STATUS getStatus() {
+	public Status getStatus() {
 		return status;
 	}
 
-	public void setStatus(STATUS status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 	

@@ -116,4 +116,13 @@ public class Job extends AbstractEntity {
     public void setBoxId(String boxId) {
       this.boxId = boxId;
     }
+
+	@Override
+	public String toString() {
+		return "Job [title=" + title + ", resolution=" + resolution + ", boxId=" + boxId + ", status=" + status
+				+ ", scenarioIds=" + scenarioIds + ", report=" + report + ", takeScreenshots=" + takeScreenshots
+				+ ", context=" + context + ", timeout=" + timeout + "]";
+	}
+    
+    
 }

@@ -1,15 +1,17 @@
 package website.automate.manager.api.client.model;
 
 public class Step {
-	enum STATUS {
+	public enum STATUS {
 		SUCCESS,
 		ERROR
 	}
 		
-	private STATUS status;
+	public STATUS status;
 
 	private int index;
 		
+
+
 	public int getIndex() {
 		return index;
 	}

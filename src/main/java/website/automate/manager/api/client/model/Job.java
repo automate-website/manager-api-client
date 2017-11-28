@@ -1,4 +1,4 @@
-package website.automate.manager.api.client.model;
+ package website.automate.manager.api.client.model;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,13 +36,24 @@ public class Job extends AbstractEntity {
     
     private Set<String> scenarioIds;
     
+    private Report report;
+    
     private TakeScreenshots takeScreenshots;
     
 	private Map<String, String> context = new HashMap<String, String>();
 	
 	private Double timeout;
-    
-    public String getTitle() {
+    	
+	
+    public Report getReport() {
+		return report;
+	}
+
+	public void setReport(Report report) {
+		this.report = report;
+	}
+
+	public String getTitle() {
         return title;
     }
 
@@ -105,4 +116,13 @@ public class Job extends AbstractEntity {
     public void setBoxId(String boxId) {
       this.boxId = boxId;
     }
+
+	@Override
+	public String toString() {
+		return "Job [title=" + title + ", resolution=" + resolution + ", boxId=" + boxId + ", status=" + status
+				+ ", scenarioIds=" + scenarioIds + ", report=" + report + ", takeScreenshots=" + takeScreenshots
+				+ ", context=" + context + ", timeout=" + timeout + "]";
+	}
+    
+    
 }

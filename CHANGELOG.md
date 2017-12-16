@@ -4,6 +4,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.8.2]
+
+### Fixed
+- authentication type comparison
+
+## [0.8.1]
+
+### Fixed
+- provided job reports
+
 ## [0.8.0]
 
 ### Added
@@ -62,7 +72,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - created initial implementation of the API
 
-[Unreleased]: https://github.com/automate-website/manager-api-client/compare/0.5.0...HEAD
+[Unreleased]: https://github.com/automate-website/manager-api-client/compare/0.8.2...HEAD
+[0.8.2]: https://github.com/automate-website/manager-api-client/compare/0.8.1...0.8.2
+[0.8.1]: https://github.com/automate-website/manager-api-client/compare/0.8.0...0.8.1
+[0.8.0]: https://github.com/automate-website/manager-api-client/compare/0.7.0...0.8.0
 [0.7.0]: https://github.com/automate-website/manager-api-client/compare/0.6.0...0.7.0
 [0.6.0]: https://github.com/automate-website/manager-api-client/compare/0.5.0...0.6.0
 [0.5.0]: https://github.com/automate-website/manager-api-client/compare/0.4.0...0.5.0
